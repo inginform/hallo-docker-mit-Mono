@@ -1,17 +1,20 @@
 FROM mono:3.10.0
 
-MAINTAINER Jan Suchotzki <jan@suchotzki.de>
+MAINTAINER Jan Suchotzki <jan@inginform.de>
 
-# Git
-# RUN echo "deb http://http.debian.net/debian wheezy-backports main" > /etc/apt/sources.list.d/wheezy-backports.list
+# Git installieren
 RUN apt-get update -y \ 
 		&& apt-get install -y git \
 		&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# HalloDocker Quellcode holen -> wiederholen, wenn neue Version des Quellcodes?
+# HalloDocker Quellcode holen
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-RUN git clone https://github.com/suchja/inginform.git .
+RUN git clone https://github.com/inginform/hallo-docker-mit-Mono.git .
 
 # Quellcode kompilieren
+WORKDIR /usr/src/app/Code
+RUN mcs HalloDocker.cs
+
 # Ausführen
+CMD ["mono", "HalloDocker.exe"]
