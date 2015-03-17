@@ -14,6 +14,6 @@ class HalloDocker
 {
 	static void Main(string[] args)
 	{
-		Console.WriteLine("inginform sagt Hallo aus einem Docker Container!");
+		Console.WriteLine("ing.inform sagt Hallo aus einem Docker Container!");
 	}
 }
