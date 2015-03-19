@@ -1,4 +1,4 @@
-FROM mono:3.10.0
+FROM mono:latest
 
 MAINTAINER Jan Suchotzki <jan@inginform.de>
 
