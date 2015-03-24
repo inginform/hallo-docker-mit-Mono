@@ -1,11 +1,10 @@
 #Hallo Docker mit Mono Artikel
 
-Dieses sind die Quellen für den [ing.inform](www.inginform.de) Artikel *Hallo Docker mit Mono*. Der Artikel wurde am xx.03.2015 [tbd](www.inginform.de) veröffentlicht.
+Dieses sind die Quellen für den [ing.inform](www.inginform.de) Artikel *Hallo Docker mit Mono*. Der Artikel wurde am xx.03.2015 [tbd](www.inginform.de) veröffentlicht. Das entsprechende Verzeichnis mit dem Docker-Image findest du im [Docker Hub](https://registry.hub.docker.com/u/inginform/hallo-docker-mit-mono/).
 
 ##Allgemeines
 
 In diesem Repository findest Du alle Quellen zu dem Artikel. Dafür gibt es folgende Verzeichnisse:
-* **Artikel** - hier findest Du den eigentlichen Artikel im Markdown Format.
 * **Code** - der Quellcode der im Artikel besprochen wird.
 * **Image** - alles was Du zum erstellen und ausführen des Quellcodes brauchst.
 
