@@ -1,8 +1,51 @@
-#Mit Containern frei von Abhängigkeiten, oder Hallo Docker
+#Software im Container, oder wie Du in unter 30 Minuten ein Programm schreibst
 
-Hast Du Dich schon mal geärgert, dass die von Dir entwickelte Anwendung auf Deinem Rechner läuft, aber auf anderen nicht? Hast Du vielleicht häufiger die Anforderung, dass Deine Anwendung auch auf einem anderen Betriebssystem laufen soll? Dann stelle ich Dir jetzt eine Technologie vor, die Dich vielleicht weiter bringt.
+Sicher hast Du schon mal gehört, dass Softwareentwicklung eigentlich ganz einfach ist. Wenn Du Dich vielleicht auch schon mal etwas näher mit dem Thema beschäftigt hast, dann hast Du gemerkt sooo einfach ist das gar nicht. Insbesondere die Einstiegshürde ist nicht eben gering.
 
-##Wo genau liegt das Problem?
+Egal ob Du nun unter Windows, Linux oder Mac OS X arbeitest, Du brauchst eine Entwicklungsumgebung. Diese muß erstmal installiert werden. Wobei das der einfachste Schritt ist (wenn er auch durch aus schon mal länger dauern kann). Nun kannst Du diese Entwicklungsumgebung öffnen und stehst vor einer unendlichen Auswahl an Möglichkeiten.
+
+Wahrscheinlich weist Du nicht so recht wie Du überhaupt eine Software entwickelst. Du wirst die Programmiersprache vielleicht nicht so gut oder gar nicht kennen. Mit der Entwicklungsumgebung hast Du ein sehr komplexes Programm zu bedienen. Viele sagen spätestens an diesem Punkt: "Kein Bock mehr!".
+
+Ich zeige Dir in diesem Artikel einen Weg, wie Du in weniger als 30 Minuten, alles was Du brauchst zum Software entwickeln, installierst und Dein erstes Programm erstellst. Du hast somit die Chance die Einstiegshürde schnell zu überwinden.
+
+Ich sage nicht, dass es einfach wird. Du wirst Deine Komfortzone verlassen müssen und auch etwas Vorstellungskraft mitbringen müssen. Ich werde Dir nämlich zeigen wie Du Deinem Computer Befehle mitteilst ohne die Maus zu verwenden. Es geht also ans Eingemachte. Dafür wirst Du in wenigen Minuten Dein erstes Programm erstellt haben. 
+
+##Was denn nun für ein Container?
+
+Du fragst Dich vielleicht was das mit den Containern immer soll. Schließlich sind wir ja nicht am Hafen, oder doch? Nein. Wir verwenden eine Technologie namens Docker.
+
+Um eine Software entwickeln zu können, brauchen wir einige Programme. Diese könntest Du nun alle auf Deinem Computer installieren, aber ich möchte es Dir ja einfach machen. Also habe ich, oder in diesem Fall die Entwickler von Docker, alles was Du benötigst in einen Container gepackt. Kannst Du Dir wirklich vorstellen wie so ein Frachtcontainer.
+
+Das einzige was Du nun auf Deinem Rechner brauchst ist ein Programm welches den Container aufnehmen kann. Dieses Programm ist die [Docker Engine](https://www.docker.com). Damit machst Du Deinen Rechner "quasi" zu einem Containerschiff, oder Containerzug, wenn Dir das besser gefällt.
+
+Sicher fragst Du Dich wie Du nun an diesen Container kommst. Das ist zum Glück auch ganz einfach. Dafür gibt es den [Docker Hub](https://registry.hub.docker.com). Dabei handelt es sich um eine Art Containerumschlagplatz. Es ist also eine zentrale Anlaufstelle, wenn Du auf der Suche nach bestimmten Containern bist, oder besser gesagt, wenn Du einen Container mit einem bestimmten Inhalt suchst.
+
+##Containerschiff für Dich
+
+Nachdem Du nun etwas Theorie gehört hast, werden wir einfach anfangen. Es ist nicht wichtig, dass Du bis hier hin alles verstanden hast. Offene Punkte sollten sich im folgenden klären. Wenn nicht, dann melde Dich einfach bei mir. [Kontakt]() [Kommentare]()
+
+Keine Angst. Die *Docker Engine* ist nicht sonderlich groß (z.B. Downloadgröße: 130MB für Mac OS X) und verbraucht auch nicht viel Ressourcen. Dein Computer wird sich nach der Installation nicht anfühlen wie ein Containerschiff. Das passiert nur, wenn Du wirklich sehr viele Container geladen hast.
+
+Die Installation der *Docker Engine* ist recht einfach. Installationspakete bekommst Du für [Mac OS X](https://github.com/boot2docker/osx-installer/releases/latest)(ab Mac OS X 10.6) und [Microsoft Windows](https://github.com/boot2docker/windows-installer/releases/latest). Wenn Du Linux benutzt, kannst Du [hier](https://docs.docker.com/installation/#installation) schauen. Je nach Distribution und Version gibt es etwas unterschiedliche Anweisungen.
+
+Unter Microsoft Windows und Mac OS X hast Du nach der Installation ein *Boot2Docker* Icon auf Deinem Desktop oder bei den Programmen. Dieses klickst Du nun an und es öffnet sich ein Fenster. Nicht erschrecken. Das geöffnete Fenster ist die Kommandozeile. Also eine Möglichkeit dem Computer zu sagen was er tun soll, ohne das Du die Maus benutzen musst. Unter Linux endet die Installation direkt in der Kommandozeile.
+
+Je nach Betriebssystem hat die Kommandozeile unterschiedliche Namen. Es gibt die Eingabeaufforderung, das Terminal, das Shell-Fenster, die Bash, und so weiter. Es dreht sich aber immer um das gleiche. Du gibst Befehle über die Tastatur ein, der Computer führt sie aus und gibt Dir dann vielleicht ein Resultat oder eine Meldung in Textform aus.
+
+Nun kannst Du noch überprüfen, ob die *Docker Engine* auch richtig funktioniert. Dazu gibst Du in der (bereits geöffneten) Kommandozeile einfach folgenden Befehl ein und drückst Enter:
+`docker run hello-world`
+
+Als Resultat für den eingegebenen Befehl, wird Dir einiges an Text angezeigt. Darunter auch `Hello from Docker.`. Der Rest des Textes besagt, dass alles richtig funktioniert und erklärt Dir im Detail was alles passiert ist.
+
+Weitere Informationen zur *Docker Engine* findest Du [hier](https://docs.docker.com/installation/#about). Dort ist allerdings alles in Englisch. In den kommenden Artikel hier auf Ing.InForm werde ich immer mal wieder Docker verwenden. Damit lernst Du dann die Basics auf Deutsch und anhand praktischer Beispiele.
+
+##Ich packe meinen Container
+
+Glückwunsch! Den schwierigsten Schritt hast Du geschaft. Du bist aus Deiner Komfortzone gekommen, hast ein Programm installiert und einen Befehl über die Kommandozeile eingegeben. Lass uns gleich weiter machen. Denn nun beginnt der interessante Teil.
+
+
+
+
 
 Bevor ich Dir Docker im Detail vorstelle möchte ich Dir erst zeigen welches Problem diese Technologie für Dich lösen kann. 
 Stell Dir vor Du hast ein Steuergerät. Dies könnte zum Beispiel den Motor einer Tür ansteuern. Nun willst Du eine kleine Anwendung schreiben welche auf einem Rechner läuft und das über eine USB-Verbindung angeschlossene Steuergerät anweist in periodischen Abständen die verbundene Tür zu öffnen. So etwas brauchst Du bestimmt häufiger, wenn Du Dein Steuergerät oder das ganze System testen möchtest (z.B.  für eine Dauerlaufprüfung).
