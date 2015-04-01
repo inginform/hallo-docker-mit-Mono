@@ -8,12 +8,14 @@
 /// <see href="">diesem Artikel</see> gefunden werden.
 /// </remarks>
 
-using System; // -> brauchen wir für die Verwendung von Console
+using System; // Brauchen wir für die Verwendung von Console.WriteLine
 
 class HalloDocker
 {
 	static void Main(string[] args)
 	{
+		// Du kannst einfach die Ausgabe dieses Programms verändern.
+		// Dazu ändere den Text zwischen den Anführungsstrichen in der folgenden Zeile:
 		Console.WriteLine("ing.inform sagt Hallo aus einem Docker Container!");
 	}
 }
