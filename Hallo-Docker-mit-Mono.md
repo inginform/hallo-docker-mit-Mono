@@ -1,12 +1,12 @@
-#Software im Container, oder wie Du in unter 30 Minuten ein Programm schreibst
+#Software im Container, oder wie Du in unter 30 Minuten ein Programm schreibst (ohne Vorkenntnisse)
 
-Sicher hast Du schon mal gehört, dass Softwareentwicklung eigentlich ganz einfach ist. Wenn Du Dich vielleicht auch schon mal etwas näher mit dem Thema beschäftigt hast, dann hast Du gemerkt sooo einfach ist das gar nicht. Insbesondere die Einstiegshürde ist nicht eben gering.
+Sicher hast Du schon mal gehört, dass Softwareentwicklung eigentlich ganz einfach ist. Wenn Du Dich vielleicht auch schon mal etwas näher mit dem Thema beschäftigt hast, dann hast Du gemerkt, sooo einfach ist das gar nicht. Insbesondere die Einstiegshürde ist nicht eben niedrig.
 
 Egal ob Du nun unter Windows, Linux oder Mac OS X arbeitest, Du brauchst eine Entwicklungsumgebung. Diese muß erstmal installiert werden. Wobei das der einfachste Schritt ist (wenn er auch durch aus schon mal länger dauern kann). Nun kannst Du diese Entwicklungsumgebung öffnen und stehst vor einer unendlichen Auswahl an Möglichkeiten.
 
 Wahrscheinlich weist Du nicht so recht wie Du überhaupt eine Software entwickelst. Du wirst die Programmiersprache vielleicht nicht so gut oder gar nicht kennen. Mit der Entwicklungsumgebung hast Du ein sehr komplexes Programm zu bedienen. Viele sagen spätestens an diesem Punkt: "Kein Bock mehr!".
 
-Ich zeige Dir in diesem Artikel einen Weg, wie Du in weniger als 30 Minuten, alles was Du brauchst zum Software entwickeln, installierst und Dein erstes Programm erstellst. Du hast somit die Chance die Einstiegshürde schnell zu überwinden.
+Ich zeige Dir in diesem Artikel einen Weg, wie Du in weniger als 30 Minuten, alles was Du brauchst zum Software entwickeln, installierst und Dein erstes Programm erstellst. Du hast somit die Chance die Einstiegshürde schnell zu überwinden. Denn wenn Du erstmal Erfolge siehst, macht es Dir sicher gleich mehr Spaß.
 
 Ich sage nicht, dass es einfach wird. Du wirst Deine Komfortzone verlassen müssen und auch etwas Vorstellungskraft mitbringen müssen. Ich werde Dir nämlich zeigen wie Du Deinem Computer Befehle mitteilst ohne die Maus zu verwenden. Es geht also ans Eingemachte. Dafür wirst Du in wenigen Minuten Dein erstes Programm erstellt haben. 
 
@@ -14,11 +14,13 @@ Ich sage nicht, dass es einfach wird. Du wirst Deine Komfortzone verlassen müss
 
 Du fragst Dich vielleicht was das mit den Containern immer soll. Schließlich sind wir ja nicht am Hafen, oder doch? Nein. Wir verwenden eine Technologie namens Docker.
 
-Um eine Software entwickeln zu können, brauchen wir einige Programme. Diese könntest Du nun alle auf Deinem Computer installieren, aber ich möchte es Dir ja einfach machen. Also habe ich, oder in diesem Fall die Entwickler von Docker, alles was Du benötigst in einen Container gepackt. Kannst Du Dir wirklich vorstellen wie so ein Frachtcontainer.
+Um eine Software entwickeln zu können, brauchen wir einige Programme. Diese könntest Du nun alle auf Deinem Computer installieren, aber ich möchte es Dir ja einfach machen. Also habe ich alles was Du benötigst in einen Container gepackt. Vom Konzept her ist es tatsächglich ähnlich wie so ein Frachtcontainer.
 
 Das einzige was Du nun auf Deinem Rechner brauchst ist ein Programm welches den Container aufnehmen kann. Dieses Programm ist die [Docker Engine](https://www.docker.com). Damit machst Du Deinen Rechner "quasi" zu einem Containerschiff, oder Containerzug, wenn Dir das besser gefällt.
 
 Sicher fragst Du Dich wie Du nun an diesen Container kommst. Das ist zum Glück auch ganz einfach. Dafür gibt es den [Docker Hub](https://registry.hub.docker.com). Dabei handelt es sich um eine Art Containerumschlagplatz. Es ist also eine zentrale Anlaufstelle, wenn Du auf der Suche nach bestimmten Containern bist, oder besser gesagt, wenn Du einen Container mit einem bestimmten Inhalt suchst.
+
+Das ist wirklich ziemlich cool. Auf dem *Docker Hub* gibt es Container mit verschiedenen Datenbanken, mit Webservern, mit Entwicklungsumgebungen und so weiter. Du kannst also innerhalb weniger Minuten Entwicklungsumgebungen für verschiedene Programmiersprachen auf Deinem Rechner haben. Dabei kann ein Container genau so schnell wieder entfernt werden ohne irgendwelche Rückstände zu hinterlassen.
 
 ##Containerschiff für Dich
 
@@ -26,9 +28,9 @@ Nachdem Du nun etwas Theorie gehört hast, werden wir einfach anfangen. Es ist n
 
 Keine Angst. Die *Docker Engine* ist nicht sonderlich groß (z.B. Downloadgröße: 130MB für Mac OS X) und verbraucht auch nicht viel Ressourcen. Dein Computer wird sich nach der Installation nicht anfühlen wie ein Containerschiff. Das passiert nur, wenn Du wirklich sehr viele Container geladen hast.
 
-Die Installation der *Docker Engine* ist recht einfach. Installationspakete bekommst Du für [Mac OS X](https://github.com/boot2docker/osx-installer/releases/latest)(ab Mac OS X 10.6) und [Microsoft Windows](https://github.com/boot2docker/windows-installer/releases/latest). Wenn Du Linux benutzt, kannst Du [hier](https://docs.docker.com/installation/#installation) schauen. Je nach Distribution und Version gibt es etwas unterschiedliche Anweisungen.
+Die Installation der *Docker Engine* ist recht einfach. Installationspakete bekommst Du für [Mac OS X hier](https://github.com/boot2docker/osx-installer/releases/latest)(ab Mac OS X 10.6) und [Microsoft Windows hier](https://github.com/boot2docker/windows-installer/releases/latest). Wenn Du Linux benutzt, kannst Du [hier](https://docs.docker.com/installation/#installation) schauen. Je nach Distribution und Version gibt es etwas unterschiedliche Anweisungen.
 
-Unter Microsoft Windows und Mac OS X hast Du nach der Installation ein *Boot2Docker* Icon auf Deinem Desktop oder bei den Programmen. Dieses klickst Du nun an und es öffnet sich ein Fenster. Nicht erschrecken. Das geöffnete Fenster ist die Kommandozeile. Also eine Möglichkeit dem Computer zu sagen was er tun soll, ohne das Du die Maus benutzen musst. Unter Linux endet die Installation direkt in der Kommandozeile.
+Unter Microsoft Windows und Mac OS X hast Du nach der Installation ein *Boot2Docker* Icon auf Deinem Desktop oder bei den Programmen. Dieses klickst Du nun an und es öffnet sich ein Fenster. Nicht erschrecken! Das geöffnete Fenster ist die Kommandozeile. Also eine Möglichkeit dem Computer zu sagen was er tun soll, ohne das Du die Maus benutzen musst. Unter Linux endet die Installation direkt in der Kommandozeile.
 
 Je nach Betriebssystem hat die Kommandozeile unterschiedliche Namen. Es gibt die Eingabeaufforderung, das Terminal, das Shell-Fenster, die Bash, und so weiter. Es dreht sich aber immer um das gleiche. Du gibst Befehle über die Tastatur ein, der Computer führt sie aus und gibt Dir dann vielleicht ein Resultat oder eine Meldung in Textform aus.
 
@@ -43,54 +45,53 @@ Weitere Informationen zur *Docker Engine* findest Du [hier](https://docs.docker.
 
 Glückwunsch! Den schwierigsten Schritt hast Du geschaft. Du bist aus Deiner Komfortzone gekommen, hast ein Programm installiert und einen Befehl über die Kommandozeile eingegeben. Lass uns gleich weiter machen. Denn nun beginnt der interessante Teil.
 
+Ich habe für Dich ein kleines Programm in C# geschrieben. Es macht nicht mehr als eine Ausgabe in der Kommandozeile. Vielleicht noch etwas langweilig, aber für den Anfang soll es reichen. Schließlich geht es hier darum, dass Du die Einstiegshürde bezüglich Entwicklungsumgebung überwindest.
+
+Dieses C#-Programm ist zusammen mit der Entwicklungsumgebung in einem Container verpackt. Eine genauere Beschreibung des Containers findest Du im [Ing.InForm Bereich auf Docker Hub](https://registry.hub.docker.com/u/inginform/hallo-docker-mit-mono/). Den Quellcode für das C#-Programm findest im [Ing-InForm Bereich auf Github](https://github.com/inginform/hallo-docker-mit-Mono).
+
+Um nun den Container vom *Docker Hub* auf Deinen Computer zu holen und ihn dort zu starten, musst Du wieder einen Befehl in der Kommandozeile eingeben. Gehe also wieder zu dem noch geöffneten Fenster mit der Kommandozeile, oder starte *Boot2Docker* bzw. die *Docker Engine*, und gebe folgenden Befehl ein:
+`docker run --rm inginform/hallo-docker-mit-mono`
+
+Das einzige was Du als Ausgabe sehen solltest ist:
+`ing.inform sagt Hallo aus einem Docker Container!`
+
+Somit bist Du schon wieder einen Schritt weiter. Du hast nun eine Entwicklungs- und Ausführungsumgebung für C#-Programme auf Deinem Computer. Ausserdem hast Du bereits ein C#-Programm auf Deinem Computer gestartet und das Resultat gesehen.
+
+**graue Box**
+Wie Du vielleicht schon vorher bemerkt hast, wird mit `docker run` die *Docker Engine* angewiesen einen Container zu starten. In unserem Fall ist das `inginform/hallo-docker-mit-mono`. Sofern der angegebene Container nicht auf Deinem Computer existiert, sucht die *Docker Engine* automatisch auf *Docker Hub* nach dem Container. Du brauchst also eine Internetverbindung wenn Du diesen Befehl ausführst.
+
+Jetzt habe ich Dir alle Bestandteile des Befehls den Du eben eingegeben hast erklärt, ausser dem Parameter `--rm`. Mit diesem Parameter sagst Du der *Docker Engine*, dass Dein Container gelöscht werden kann, wenn er beendet wird. 
+**/graue Box**
+
+##Dein erstes Programm
+
+Nun ist das bisher erreichte schon nicht schlecht, aber es geht darum, dass Du ein eigenes Programm erstellst. Dazu brauchst Du als erstes Quellcode auf Deinem Computer. Genau den erstellst Du jetzt.
+
+Am besten Du legst Dir auf Deinem Computer ein eigenes Verzeichnis für Softwareentwicklung an und in diesem ein Unterverzeichnis für dein C#-Programm. Die Verzeichnisse kannst Du anlegen wie und wo Du willst und natürlich auch benennen wie Du willst. Mein Standardvorgehen ist, dass ich in meinem Benutzerverzeichnis ein Unterverzeichnis mit dem Namen `Entwicklung` erstelle. Für dieses Beispiel habe ich darin das Unterverzeichnis `HalloDocker`erstellt.
+
+Nun brauchen wir in dem Verzeichnis `HalloDocker` noch eine Datei mit Quellcode. Dazu legst Du eine Datei mit der Endung `.cs` an. Ich habe sie `HalloDocker.cs` genannt. In diese Datei kannst Du nun ein Hauptprogramm in C# schreiben, oder Du kopierst Dir einfach den Quellcode von [hier](https://github.com/inginform/hallo-docker-mit-Mono/blob/master/Code/HalloDocker.cs).
+
+Um den Quellcode in die Datei zu kopieren öffnest Du die Datei mit einem Texteditor (z.B. Notepad in Microsoft Windows oder TextEdit in Mac OS X). 
+Wenn Du denn Quellcode kopiert hast, dann solltest Du ihn noch überarbeiten, damit es auch wirklich DEIN eigenes Programm ist. Eine Mögilchkeit was Du machen kannst ist im Quellcode beschrieben.
+
+Nachdem Du den Quellcode fertig hast, muss er in ein ausführbares Programm übersetzt werden. Alles was Du dazu benötigst ist im Container enthalten. Als erstes musst Du jedoch im Fenster mit der Kommandozeile in das Verzeichnis wechseln indem Dein Quellcode ist. In der grauen Box an der Seite sind die Befehle beschrieben die Du benötigst.
+
+**graue Box** -> Hinweis: Besser als separaten Artikel oder Tabelle mit direkter Unterscheidung zwischen Windows und OS X / Linux
+Folgende Befehle kannst Du in der Kommandozeile verwenden um zwischen Verzeichnissen zu navigieren:
+- `pwd` - Zeigt den kompletten Pfad des aktuellen Verzeichnisses an. (Befehl gibt es nicht in Microsoft Windows. `echo %cd%` solle hier verwendet werden.)
+- `cd` - Wechselt in ein Verzeichnis dessen Namen dem Befehl als Parameter folgt. Dabei gilt, dass `cd ..` in das übergeordnete Verzeichnis wechselt. Um vom aktuellen Verzeichnis in das Unterverzeichnis *Entwicklung* zu wechseln, kannst Du `cd Entwicklung` eingeben.
+- `ls` - Zeigt den Inhalt des aktuellen Verzeichnisses an. (Unter Microsoft Windows heißt der Befehl `dir`.)
+**/graue Box**
+
+Wenn Du in der Eingabeaufforderung dein Verzeichnis erreicht hast, dann kannst Du wieder den Container starten. Diesmal geht das etwas anders. Beim vorherigen `docker run ...` wurde einfach der Container gestartet, das enthaltene Programm ausgeführt und anschließend der Container wieder beendet. Ausser dem starten hast Du nicht mit Container interagiert. Da alle nötigen Werkzeuge zum übersetzen des Quellcodes jedoch im Container sind, werden wir jetzt den Container starten und dann dadrin arbeiten.
+
+Gebe also bitte folgenden Befehl ein:
+`docker run --rm -it -v $(pwd):/usr/src/project -w /usr/src/project inginform/hallo-docker-mit-mono /bin/bash`
 
 
-
-
-Bevor ich Dir Docker im Detail vorstelle möchte ich Dir erst zeigen welches Problem diese Technologie für Dich lösen kann. 
-Stell Dir vor Du hast ein Steuergerät. Dies könnte zum Beispiel den Motor einer Tür ansteuern. Nun willst Du eine kleine Anwendung schreiben welche auf einem Rechner läuft und das über eine USB-Verbindung angeschlossene Steuergerät anweist in periodischen Abständen die verbundene Tür zu öffnen. So etwas brauchst Du bestimmt häufiger, wenn Du Dein Steuergerät oder das ganze System testen möchtest (z.B.  für eine Dauerlaufprüfung).
-
-Die Lösung scheint erstmal recht einfach. Du nimmst die Entwicklungsumgebung Deiner Wahl, zum Beispiel Visual Studio mit .Net 4.5 und C#, und fängst an die Anwendung zu erstellen. Natürlich brauchst Du auch noch einen Treiber, damit Du eine Kommunikationsverbindung mit dem Steuergerät herstellen kannst. Nicht lange und alles läuft auf Deinem Entwicklungsrechner wie es soll.
-
-Nun willst Du diese Anwendung aber nicht auf Deinem Entwicklungsrechner laufen lassen, sondern an zwei unterschiedlichen Versuchsaufbauten. Ausserdem haben Dich gerade die Qualitätssicherung und ein externes Prüflabor gebeten Ihnen eine ähnliche Anwendung für ihre Prüfung bereit zu stellen. Du hast also Deine Anwendung und insgesamt 4 unterschiedliche Rechner auf denen Du sie laufen lassen willst.
-
-Wie immer ist es leider nicht so, dass die Rechner die gleiche Version des Betriebssystems verwenden, sondern sie sind unterschiedlich. Du musst also auf allen Rechnern feststellen ob die passende .Net Version installiert ist und diese gegebenenfalls nach installieren. Du musst den passenden Treiber installieren und hast dabei Konflikte mit anderen bereits installierten Treibern und so weiter. Letztlich hast Du mehr Zeit damit verbracht die Anwendung auf allen Rechnern zu installieren, als die Anwendung zu entwickeln.
-
-Wahrscheinlich wäre es einfacher gewesen Deinen Entwicklungsrechner zu klonen und überall dahin zu stellen wo Deine Anwendung benötigt wird. Offensichtlich hätte dies andere Probleme, aber Du könntest Dir sicher sein, dass es in jeder Umgebung einfach laufen wird.
-
-##Dafür gibt es Docker!
-
-Genau an diesem Punkt setzt Docker an. Docker ist eine Technologie und in ihrem Mittelpunkt steht ein Gebilde welches Container genannt wird. Du kannst Dir einen Container als eine Art kleinen Computer vorstellen. Ein Container bietet genügend Platz um eine Anwendung und alles was diese zum laufen braucht auf zu nehmen. 
-
-Wenn Du Deine Anwendung und alle Ihre Abhängigkeiten in diesen Container gepackt hast, kannst Du ihn klonen und auf jeden Rechner kopieren. Da ein Container eine Art kleiner Computer ist, kannst Du ihn starten und es wird automatisch Deine Anwendung ausgeführt. Wenn Du Deine Anwendung also in einen Container gepackt hast und dieser auf Deinem Entwicklungsrechner läuft, dann wird er auch auf allen anderen Rechnern laufen.
-
-Somit bietet Dir Docker nicht nur die Möglichkeit Deine Anwendung einfach auf unterschiedlichen Rechnern laufen zu lassen, sondern es bietet Deiner Anwendung einen eigenen Sandkasten. Für den Inhalt Deines Containers bist Du verantwortlich. Wenn Deine Anwendung also einen Treiber braucht, dann kannst Du diesen in Deinem Container installieren. Du hast aber keine Konflikte mit anderen Treibern, weil Du eben nur diesen einen Treiber installierst. Entsprechend ist es (fast) egal was sonst noch so auf dem Rechner läuft oder installiert ist.
-
-In einem Container wird Deine Anwendung also wirklich Portable. Somit wird auch die Entwicklung Deiner Anwendung in den meisten Fällen wesentlich vereinfacht. Denn nun brauchst Du Dir nicht mehr die Gedanken machen was die Unterschiede der Umgebungen sind in denen Deine Anwendung einmal laufen soll. Du definierst einfach Deine Wunschumgebung und realisierst diese dann in dem Container. Dadurch wird schon mal ein großer Teil von Variablen eliminiert und Du kannst Dich wieder ein bisschen mehr darauf konzentrieren was wirklichen Nutzen für Dich und/oder Deine Anwender bringt.
-
-##Wie ist Docker aufgebaut?
-
-Wie bereits erwähnt, ist der Container die zentrale Einheit bei Docker. In den meisten Fällen läuft in einem Container genau eine Instantz einer Anwendung. Nun ist es möglich mehrere Instanzen einer Anwendung auf dem selben oder auch auf unterschiedlichen Rechnern laufen zu lassen. Entsprechend hat ein Container eine eindeutige Identifikationsnummer und einen Namen. 
-
-Wenn wir bei unserem Beispiel von oben bleiben und annehmen, dass wir Steuergeräte von Türen testen wollen, dann könnte es sein, das wir mehrere Steuergeräte an einen Rechner angeschlossen haben. Nun müssen wir unsere Anwendung einmal für jedes Steuergerät ausführen. Wir starten also pro Steuergerät einen Container. Jeden dieser Container können wir eindeutig identifizieren über seine Id oder seinen Namen.
-
-Damit Du nun nicht für jeden Container immer wieder definieren musst was genau alles da rein soll, gibt es in Docker Images. Ein Image ist quasi die Blaupause für eine bestimmte Art von Container. Für ein Image kannst Du definieren welche Basisfunktionen es haben soll, welche Anwendung darin laufen soll und so weiter. Solch ein Image ist aber nicht nur eine Beschreibung, sondern es ist ein Binärpaket welches von einer Docker-Installation ausgeführt werden kann.
-
-Für das Beispiel von oben müssten wir also ein Image erstellen, dass einen Treiber, für die Kommunikation mit dem Steuergerät enthält, dass das .NET 4.5 Framework enthält, und natürlich die erstellte Anwendung. Für jedes Image wird weiterhin angegeben auf welcher Basis es laufen soll. In diesem Beispiel könntest Du Windows 8 angeben. Leider ist dies momentan noch nicht möglich, weil Microsoft noch an der Integration von Docker arbeitet.
-
-Wenn Du einen Container starten willst, dann brauchst Du lediglich sagen welches Image die Basis sein soll und unter Umständen musst Du noch ein paar Konfigurationsinformationen angeben. Dann aber kannst Du so viele Container von diesem Image starten wie Du willst. Mit Docker Hub gibt es sogar eine Möglichkeit Images mit anderen Leuten zu teilen. Du brauchst beim erstellen Deiner Images also nicht immer von vorne anfangen, sondern kannst Dich einer breiten Basis von Images bedienen.
-
-##GENUG (langweilige) Theorie, lass uns endlich was machen
-
-Bei mir hat es recht lange gedauert, bis ich das volle Potential, die Funktionsweise und den allgemeinen Aufbau von Docker erkannt habe. Dabei musste ich immer wieder feststellen, dass mir Beispiele und das erstellen von eigenen Images und Containern am besten geholfen haben. 
 
 Du hast vielleicht schon mal etwas von [Mono](http://www.mono-project.com) gehört. Das ist ein Projekt welches Teile des .NET Frameworks von Microsoft unter Unix, Linux, Mac OS X, usw. bereitstellt. Damit lassen sich Anwendungen in C#, F#, ... auch auf anderen Plattformen als Microsoft Windows entwickeln. Dies brauchst Du aktuell vielleicht nicht, aber ich möchte Dir zeigen wie einfach es ist ein (sehr) einfache C#-Anwendung zu kompilieren und auszuführen.
 
-Natürlich verwenden wir dafür Docker! Der erste Schritt für Dich ist also die Docker Engine zu installieren. Da es je nach verwendetem Betriebssystem unterschiedliche Installationsanweisungen gibt, solltest Du einfach [hier](https://docs.docker.com/installation/#installation) nach Deinem Betriebssystem suchen und dann die entsprechenden Schritte ausführen. 
-
-Sobald Du eine lauffähige Docker Installation hast (am besten mit `docker version` überprüfen wie in dem jeweiligen Installationsanweisungen beschrieben), kann es auch schon los gehen. Ich habe für Dich eine kleine C#-Anwendung geschrieben und [hier](https://github.com/inginform/hallo-docker-mit-Mono/blob/master/Code/HalloDocker.cs) auf Github abgelegt. Wie Du sehen kannst ist die Anwendung sehr einfach. Sie gibt lediglich einen Text auf der Kommandozeile aus, wenn sie ausgeführt wird.
-
-Nun geht es ja aber nicht um die Anwendung, sondern darum, diese in einem Docker-Container auszuführen. Dafür habe ich ein Image erstellt und [hier](https://registry.hub.docker.com/u/inginform/hallo-docker-mit-mono/) auf Docker Hub abgelegt.
 
 Du brauchst also nur noch Deiner bereits installierten Docker Engine mit zu teilen, dass Du einen Container basierend auf diesem Image starten möchtest. Dafür gibst Du im Terminal/Kommandozeile/Shell oder wie das bei Deinem Betriebssystem auch immer heißt folgendes ein:
 `docker run --rm inginform/hallo-docker-mit-mono`
