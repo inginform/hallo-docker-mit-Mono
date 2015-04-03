@@ -69,10 +69,10 @@ Nun ist das bisher erreichte schon nicht schlecht, aber es geht darum, dass Du e
 
 Am besten Du legst Dir auf Deinem Computer ein eigenes Verzeichnis für Softwareentwicklung an und in diesem ein Unterverzeichnis für dein C#-Programm. Die Verzeichnisse kannst Du anlegen wie und wo Du willst und natürlich auch benennen wie Du willst. Mein Standardvorgehen ist, dass ich in meinem Benutzerverzeichnis ein Unterverzeichnis mit dem Namen `Entwicklung` erstelle. Für dieses Beispiel habe ich darin das Unterverzeichnis `HalloDocker`erstellt.
 
-Nun brauchen wir in dem Verzeichnis `HalloDocker` noch eine Datei mit Quellcode. Dazu legst Du eine Datei mit der Endung `.cs` an. Ich habe sie `HalloDocker.cs` genannt. In diese Datei kannst Du nun ein Hauptprogramm in C# schreiben, oder Du kopierst Dir einfach den Quellcode von [hier](https://github.com/inginform/hallo-docker-mit-Mono/blob/master/Code/HalloDocker.cs).
+Nun brauchen wir im Verzeichnis `HalloDocker` noch eine Datei mit Quellcode. Dazu legst Du eine Datei mit der Endung `.cs` an. Ich habe sie `HalloDocker.cs` genannt. In diese Datei kannst Du nun ein Hauptprogramm in C# schreiben, oder Du kopierst Dir einfach den Quellcode von [hier](https://github.com/inginform/hallo-docker-mit-Mono/blob/master/Code/HalloDocker.cs).
 
 Um den Quellcode in die Datei zu kopieren öffnest Du die Datei mit einem Texteditor (z.B. Notepad in Microsoft Windows oder TextEdit in Mac OS X). 
-Wenn Du denn Quellcode kopiert hast, dann solltest Du ihn noch überarbeiten, damit es auch wirklich DEIN eigenes Programm ist. Eine Mögilchkeit was Du machen kannst ist im Quellcode beschrieben.
+Wenn Du den Quellcode kopiert hast, dann solltest Du ihn noch überarbeiten, damit es auch wirklich DEIN eigenes Programm ist. Eine Möglichkeit was Du machen kannst ist im Quellcode beschrieben.
 
 Nachdem Du den Quellcode fertig hast, muss er in ein ausführbares Programm übersetzt werden. Alles was Du dazu benötigst ist im Container enthalten. Als erstes musst Du jedoch im Fenster mit der Kommandozeile in das Verzeichnis wechseln indem Dein Quellcode ist. In der grauen Box an der Seite sind die Befehle beschrieben die Du benötigst.
 
@@ -83,34 +83,28 @@ Folgende Befehle kannst Du in der Kommandozeile verwenden um zwischen Verzeichni
 - `ls` - Zeigt den Inhalt des aktuellen Verzeichnisses an. (Unter Microsoft Windows heißt der Befehl `dir`.)
 **/graue Box**
 
-Wenn Du in der Eingabeaufforderung dein Verzeichnis erreicht hast, dann kannst Du wieder den Container starten. Diesmal geht das etwas anders. Beim vorherigen `docker run ...` wurde einfach der Container gestartet, das enthaltene Programm ausgeführt und anschließend der Container wieder beendet. Ausser dem starten hast Du nicht mit Container interagiert. Da alle nötigen Werkzeuge zum übersetzen des Quellcodes jedoch im Container sind, werden wir jetzt den Container starten und dann dadrin arbeiten.
+Wenn Du in der Eingabeaufforderung dein Verzeichnis erreicht hast, dann kannst Du wieder den Container starten. Diesmal geht das etwas anders. Beim vorherigen `docker run ...` wurde einfach der Container gestartet, das enthaltene Programm ausgeführt und anschließend der Container wieder beendet. Ausser dem starten hast Du nicht mit dem Container interagiert. Da alle nötigen Werkzeuge zum übersetzen des Quellcodes jedoch im Container sind, werden wir jetzt den Container starten und dann dadrin arbeiten.
 
-Gebe also bitte folgenden Befehl ein:
+Gebe also bitte folgenden Befehl in der Kommandozeile ein:
 `docker run --rm -it -v $(pwd):/usr/src/project -w /usr/src/project inginform/hallo-docker-mit-mono /bin/bash`
 
+Wie Du siehst hat sich der Kommandoprompt (der Teil in der Kommandozeile der vor dem Cursor steht) ein wenig verändert. Er sollte mit `root@` anfangen. Dies ist das Zeichen, dass Du Dich nun im Container befindest. Über die vielen Parameter die Du bei `docker run` mit angegeben hast, ist Dein Quellcode im Container verfügbar.
 
+Nun brauchst Du nur noch Deinen Quellcode zu übersetzen und auszuführen. Dazu brauchen wir als erstes einen C#-Compiler. Dieser macht aus Deinem Quellcode ein ausführbares Programm. Dieser Compiler ist natürlich im Container enthalten. Gib also folgenden Befehl in der Kommandozeile ein:
+`mcs HalloDocker.cs`. Wenn Du einen anderen Dateinamen als ich verwendet hast, musst Du das `HalloDocker.cs` mit diesem Dateinamen ersetzen.
 
-Du hast vielleicht schon mal etwas von [Mono](http://www.mono-project.com) gehört. Das ist ein Projekt welches Teile des .NET Frameworks von Microsoft unter Unix, Linux, Mac OS X, usw. bereitstellt. Damit lassen sich Anwendungen in C#, F#, ... auch auf anderen Plattformen als Microsoft Windows entwickeln. Dies brauchst Du aktuell vielleicht nicht, aber ich möchte Dir zeigen wie einfach es ist ein (sehr) einfache C#-Anwendung zu kompilieren und auszuführen.
+Wenn Du Dir nun den Inhalt des Verzeichnisses in dem Dein Quellcode liegt anschaust, dann wirst Du sehen, dass es eine neue Datei gibt. In meinem Fall ist es die Datei `HalloDocker.exe`. Dieses ist das aus Deinem Quellcode erstellte ausführbare Programm. Nun brauchst Du dieses nur noch starten:
+`mono HalloDocker.exe`.
 
+Und? Bekommst Du die Ausgabe, die Du erwartet hast? Wenn nicht, dann solltest Du den Quellcode anschauen und unter Umständen entsprechend überarbeiten. Dies machst Du wieder mit Deinem Texteditor. Nachdem Du den Quellcode verändert hast, must Du ihn wieder mit dem Compiler übersetzen und dann ausführen. Dazu gibst Du die letzten beiden Befehle wieder in der Kommandozeile ein.
 
-Du brauchst also nur noch Deiner bereits installierten Docker Engine mit zu teilen, dass Du einen Container basierend auf diesem Image starten möchtest. Dafür gibst Du im Terminal/Kommandozeile/Shell oder wie das bei Deinem Betriebssystem auch immer heißt folgendes ein:
-`docker run --rm inginform/hallo-docker-mit-mono`
+Wenn Du mit dem Ergebnis zufrieden bist, kannst Du den Container verlassen. Dazu gibst Du einfach folgenden Befehl ein:
+`exit`. Damit hat sich wieder der Kommandoprompt verändert und Du hast den Container verlassen. 
 
-Das einzige was Du dann als Ausgabe sehen wirst ist:
-`ing.inform sagt Hallo aus einem Docker Container!`
+##GESCHAFFT! 
 
-Vielleicht bekommst Du auch eine Fehlermeldung wie zum Beispiele diese: 
-`FATA[0000] Post http:///var/run/docker.sock/v1.17/containers/create: dial unix /var/run/docker.sock: no such file or directory. Are you trying to connect to a TLS-enabled daemon without TLS?`
+Herzlichen Glückwunsch! Du hast es geschafft. Du kannst nun nach belieben den Quellcode verändern
 
-Dann solltest Du sicherstellen, dass Du das `docker run` Kommando in dem gleichen Terminal eingegeben hast in dem Du auch Docker gestartet hast bzw. welches sich geöffnet hat als Du Boot2Docker gestartet hast.
-
-##Was sagt Dir das nun?
-
-Was ist passiert und was genau bedeuten die Befehle? Einer der wichtigsten Docker Befehle ist `docker run`. Damit sagst Du, dass Du einen Container basierend auf einem Image starten möchtest. Sofern Docker das angegebene Image nicht lokal bei Dir finden kann, versucht die Docker Engine das entsprechende Image im Docker Hub zu finden und dann auf Deinen Rechner zu laden. Im Docker Hub setzt sich der Name eines Images meistens aus dem Namen des Erstellers und dem Namen des Verzeichnisses zusammen. Entsprechend ist `inginform/hallo-docker-mit-mono` in unserem Beispiel der Name des Images.
-
-Damit bleibt nur noch der Parameter `--rm` übrig. Dieser sagt Docker, dass er den Container nach der Ausführung direkt wieder löschen kann.
-
-Nachdem Du nun eine erste Idee hast was Docker ist und was Du damit anfangen kannst, bekommst Du in den nächsten Artikeln mehr Details und vor allem viel mehr Beispiele. Damit kannst Du hoffentlich die Thematik schnell verstehen. Es würde mich sehr freuen, wenn Du mir sagst ob Dir der Artikel gefallen hat und ob Dich das Thema interessiert. Schreib doch einfach einen Kommentar unter diesen Artikel.
 
 Fang einfach direkt an etwas zu entwickeln und bis zum nächsten Artikel
 Jan
